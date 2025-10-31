@@ -7,9 +7,10 @@ import random
 Range = int(input('How many random numbers would you like in your file? ',))
 
 if Range < 1000:
-    for i in range(Range):
-        bob = random.randint(1,500)
-        print(bob)
+    with open('random_numbers.txt','w') as file:
+        for i in range(Range):
+            bob = random.randint(1,500)
+            print(bob)
+            file.write(str(bob) + '\n')
 else: 
     print('The number must be less than 1,000')
-# come back to this one and Don't forget to put the stuff in a file (thumbs up)
