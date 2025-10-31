@@ -3,3 +3,14 @@
 # Each random number should be in the range of 1 through 500. 
 # The application should let the user specify how many random numbers the file will hold 
 # (up to 1000).
+import random
+Range = int(input('How many random numbers would you like in your file? ',))
+
+if Range < 1000:
+    with open('random_numbers.txt','w') as file:
+        for i in range(Range):
+            bob = random.randint(1,500)
+            print(bob)
+            file.write(str(bob) + '\n')
+else: 
+    print('The number must be less than 1,000')
